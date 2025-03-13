@@ -1,6 +1,6 @@
 <h1>Sistema de Automação do Passe Livre Estudantil PCR - Demonstração de um Sistema de Matrícula de Aluno</h1>
 
-1. Visão Geral
+**1. Visão Geral**
 
 O código exemplifica um sistema de matrícula escolar que, ao concluir o cadastro de um aluno, utiliza um chatbot integrado ao WhatsApp para notificar o sucesso da matrícula e informar sobre a elegibilidade ao benefício do Passe Livre. Essa abordagem automatiza a comunicação, garantindo que os responsáveis sejam imediatamente informados sobre o status da matrícula e dos benefícios disponíveis, melhorando a eficiência e a satisfação dos usuários.
 
@@ -17,7 +17,7 @@ Envio Automático: Se o estudante confirmar o interesse, a solicitação é envi
 Notificação Final: O sistema informa ao estudante a previsão de retirada do Passe Livre.
 
 <br />
-2. Tecnologias Utilizadas
+**2. Tecnologias Utilizadas**
 
 **Backend**
 
@@ -47,7 +47,7 @@ AWS (EC2, Lambda, API Gateway) ou DigitalOcean: Para hospedagem da API.
 Docker: Para conteinerização e deploy eficiente.
 
 <br />
-3. Arquitetura do Sistema
+**3. Arquitetura do Sistema**
 
 Fluxo da Integração
 
@@ -62,9 +62,10 @@ Resposta do Estudante → Tratamento pelo Backend (Node.js).
 Solicitação Enviada → API do Grande Recife Consórcio de Transporte.
 
 Notificação Final → Envio da mensagem com previsão de retirada.
-<br />
 
-4. Benefícios da Solução
+<br />
+<br />
+**4. Benefícios da Solução**
 
 ✅ Redução de Burocracia: Sem necessidade de ação manual por parte do cidadão.<br />
 ✅ Agilidade: Processo automatizado e em tempo real.<br />
@@ -72,7 +73,7 @@ Notificação Final → Envio da mensagem com previsão de retirada.
 ✅ Segurança e Confiabilidade: Garantia de comunicação segura entre os sistemas.
 
 <br />
-5. Conclusão
+**5. Conclusão**
 
 O sistema proporciona uma experiência 100% automatizada, garantindo a integração eficiente entre os sistemas da Rede Municipal de Ensino do Recife e o Grande Recife Consórcio de Transporte, alinhado ao conceito de Recife Zero Clique e à modernização dos serviços públicos.
 
