@@ -4,7 +4,7 @@
 
 O código exemplifica um sistema de matrícula escolar que, ao concluir o cadastro de um aluno, utiliza um chatbot integrado ao WhatsApp para notificar o sucesso da matrícula e informar sobre a elegibilidade ao benefício do Passe Livre. Essa abordagem automatiza a comunicação, garantindo que os responsáveis sejam imediatamente informados sobre o status da matrícula e dos benefícios disponíveis, melhorando a eficiência e a satisfação dos usuários.
 
-A Solução Passe Livre a Zero Clique tem como objetivo automatizar a solicitação e renovação do Passe Livre para estudantes da rede municipal de Recife, dentro do conceito do Recife Zero Clique.
+A Solução Passe Livre a Zero Clique tem como objetivo automatizar a solicitação do Passe Livre para estudantes da rede municipal de Recife, dentro do conceito do Recife Zero Clique.
 
 Fluxo de Funcionamento
 
