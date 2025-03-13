@@ -1,6 +1,6 @@
 <h1>Sistema de Automação do Passe Livre Estudantil PCR - Demonstração de um Sistema de Matrícula de Aluno</h1>
 
-**1. Visão Geral**
+1. **Visão Geral**
 
 O código exemplifica um sistema de matrícula escolar que, ao concluir o cadastro de um aluno, utiliza um chatbot integrado ao WhatsApp para notificar o sucesso da matrícula e informar sobre a elegibilidade ao benefício do Passe Livre. Essa abordagem automatiza a comunicação, garantindo que os responsáveis sejam imediatamente informados sobre o status da matrícula e dos benefícios disponíveis, melhorando a eficiência e a satisfação dos usuários.
 
