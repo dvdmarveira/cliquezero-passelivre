@@ -80,7 +80,7 @@ git clone https://github.com/dvdmarveira/cliquezero-passelivre.git
 
 2. **Acesse a pasta do projeto**:
 ```sh
-cd cliquezero-dips
+cd cliquezero-passelivre-main
 ```
 
 3. **Instale as dependências**:
