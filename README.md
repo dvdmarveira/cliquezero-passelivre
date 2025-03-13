@@ -16,31 +16,33 @@ Envio Automático: Se o estudante confirmar o interesse, a solicitação é envi
 
 Notificação Final: O sistema informa ao estudante a previsão de retirada do Passe Livre.
 
+
 2. Tecnologias Utilizadas
 
-Backend
+**Backend**
 
 Node.js + Express.js: Para desenvolvimento da API RESTful responsável pela comunicação entre os sistemas.
 
 MongoDB: Para armazenamento de registros de interações, logs e status das solicitações.
 
-Integração e Mensageria
+**Integração e Mensageria**
 
 WhatsApp API (Twilio, Zenvia ou Meta Cloud API): Para envio automatizado de mensagens aos estudantes.
 
 Grande Recife Consórcio de Transporte API: Para envio das solicitações do Passe Livre.
 
-Segurança e Autenticação
+**Segurança e Autenticação**
 
 JWT (JSON Web Token): Para autenticação segura entre os sistemas.
 
 HTTPS + API Keys: Para comunicação segura entre os serviços.
 
-Hospedagem e Infraestrutura
+**Hospedagem e Infraestrutura**
 
 AWS (EC2, Lambda, API Gateway) ou DigitalOcean: Para hospedagem da API.
 
 Docker: Para conteinerização e deploy eficiente.
+
 
 3. Arquitetura do Sistema
 
