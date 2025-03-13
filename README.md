@@ -60,9 +60,9 @@ Notificação Final → Envio da mensagem com previsão de retirada.
 
 4. Benefícios da Solução
 
-✅ Redução de Burocracia: Sem necessidade de ação manual por parte do cidadão.
-✅ Agilidade: Processo automatizado e em tempo real.
-✅ Maior Aderência ao Passe Livre: Facilidade no acesso ao benefício.
+✅ Redução de Burocracia: Sem necessidade de ação manual por parte do cidadão.<br />
+✅ Agilidade: Processo automatizado e em tempo real.<br />
+✅ Maior Aderência ao Passe Livre: Facilidade no acesso ao benefício.<br />
 ✅ Segurança e Confiabilidade: Garantia de comunicação segura entre os sistemas.
 
 5. Conclusão
