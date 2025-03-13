@@ -17,7 +17,7 @@ Envio Automático: Se o estudante confirmar o interesse, a solicitação é envi
 Notificação Final: O sistema informa ao estudante a previsão de retirada do Passe Livre.
 
 <br />
-**2. Tecnologias Utilizadas**
+2. **Tecnologias Utilizadas**
 
 **Backend**
 
@@ -47,7 +47,7 @@ AWS (EC2, Lambda, API Gateway) ou DigitalOcean: Para hospedagem da API.
 Docker: Para conteinerização e deploy eficiente.
 
 <br />
-**3. Arquitetura do Sistema**
+3. **Arquitetura do Sistema**
 
 Fluxo da Integração
 
@@ -65,7 +65,7 @@ Notificação Final → Envio da mensagem com previsão de retirada.
 
 <br />
 <br />
-**4. Benefícios da Solução**
+4. **Benefícios da Solução**
 
 ✅ Redução de Burocracia: Sem necessidade de ação manual por parte do cidadão.<br />
 ✅ Agilidade: Processo automatizado e em tempo real.<br />
@@ -73,7 +73,7 @@ Notificação Final → Envio da mensagem com previsão de retirada.
 ✅ Segurança e Confiabilidade: Garantia de comunicação segura entre os sistemas.
 
 <br />
-**5. Conclusão**
+5. **Conclusão**
 
 O sistema proporciona uma experiência 100% automatizada, garantindo a integração eficiente entre os sistemas da Rede Municipal de Ensino do Recife e o Grande Recife Consórcio de Transporte, alinhado ao conceito de Recife Zero Clique e à modernização dos serviços públicos.
 
