@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema Passe Livre</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <div id="app">
+    <h1>Matrícula do Estudante</h1>
+
+    <div class="card">
+      <h2>Cadastro de Estudante</h2>
+      <form id="cadastroForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label>Nome Completo</label>
+            <input type="text" name="nome" required>
+          </div>
+          <div class="form-group">
+            <label>Série</label>
+            <select name="serie" required>
+              <option value="6º ano">6º ano</option>
+              <option value="7º ano">7º ano</option>
+              <option value="8º ano">8º ano</option>
+              <option value="9º ano">9º ano</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Escola</label>
+            <input type="text" name="escola" required>
+          </div>
+          <div class="form-group">
+            <label>NIS</label>
+            <input type="text" name="nis" required>
+          </div>
+          <div class="form-group">
+            <label>Data de Nascimento</label>
+            <input type="date" name="dataNascimento" required>
+          </div>
+          <div class="form-group">
+            <label>Nome do Responsável</label>
+            <input type="text" name="responsavel" required>
+          </div>
+          <div class="form-group">
+            <label>Telefone</label>
+            <input type="tel" name="telefone" required>
+          </div>
+        </div>
+        <button type="submit">Cadastrar</button>
+
+      </form>
+    </div>
+
+    <div id="resultado" class="card hidden">
+      <h2>Resultado da Verificação</h2>
+      <div id="resultadoConteudo"></div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
