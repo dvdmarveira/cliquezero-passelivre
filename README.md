@@ -16,7 +16,7 @@ Envio Automático: Se o estudante confirmar o interesse, a solicitação é envi
 
 Notificação Final: O sistema informa ao estudante a previsão de retirada do Passe Livre.
 
-
+<br />
 2. Tecnologias Utilizadas
 
 **Backend**
@@ -24,18 +24,21 @@ Notificação Final: O sistema informa ao estudante a previsão de retirada do P
 Node.js + Express.js: Para desenvolvimento da API RESTful responsável pela comunicação entre os sistemas.
 
 MongoDB: Para armazenamento de registros de interações, logs e status das solicitações.
+<br />
 
 **Integração e Mensageria**
 
 WhatsApp API (Twilio, Zenvia ou Meta Cloud API): Para envio automatizado de mensagens aos estudantes.
 
 Grande Recife Consórcio de Transporte API: Para envio das solicitações do Passe Livre.
+<br />
 
 **Segurança e Autenticação**
 
 JWT (JSON Web Token): Para autenticação segura entre os sistemas.
 
 HTTPS + API Keys: Para comunicação segura entre os serviços.
+<br />
 
 **Hospedagem e Infraestrutura**
 
@@ -43,7 +46,7 @@ AWS (EC2, Lambda, API Gateway) ou DigitalOcean: Para hospedagem da API.
 
 Docker: Para conteinerização e deploy eficiente.
 
-
+<br />
 3. Arquitetura do Sistema
 
 Fluxo da Integração
@@ -59,6 +62,7 @@ Resposta do Estudante → Tratamento pelo Backend (Node.js).
 Solicitação Enviada → API do Grande Recife Consórcio de Transporte.
 
 Notificação Final → Envio da mensagem com previsão de retirada.
+<br />
 
 4. Benefícios da Solução
 
@@ -67,10 +71,12 @@ Notificação Final → Envio da mensagem com previsão de retirada.
 ✅ Maior Aderência ao Passe Livre: Facilidade no acesso ao benefício.<br />
 ✅ Segurança e Confiabilidade: Garantia de comunicação segura entre os sistemas.
 
+<br />
 5. Conclusão
 
 O sistema proporciona uma experiência 100% automatizada, garantindo a integração eficiente entre os sistemas da Rede Municipal de Ensino do Recife e o Grande Recife Consórcio de Transporte, alinhado ao conceito de Recife Zero Clique e à modernização dos serviços públicos.
 
+<br />
 ## Como Rodar o Projeto
 
 Para executar o projeto localmente após baixá-lo, siga os passos abaixo:
