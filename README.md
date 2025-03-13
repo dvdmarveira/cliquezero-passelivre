@@ -68,3 +68,41 @@ Notificação Final → Envio da mensagem com previsão de retirada.
 5. Conclusão
 
 O sistema proporciona uma experiência 100% automatizada, garantindo a integração eficiente entre os sistemas da Rede Municipal de Ensino do Recife e o Grande Recife Consórcio de Transporte, alinhado ao conceito de Recife Zero Clique e à modernização dos serviços públicos.
+
+## Como Rodar o Projeto
+
+Para executar o projeto localmente após baixá-lo, siga os passos abaixo:
+
+1. **Clone o repositório**:
+```sh
+git clone https://github.com/dvdmarveira/cliquezero-passelivre.git
+```
+
+2. **Acesse a pasta do projeto**:
+```sh
+cd cliquezero-dips
+```
+
+3. **Instale as dependências**:
+```sh
+npm install
+```
+
+4. **Configure as variáveis de ambiente** (se necessário, crie um arquivo .env).
+
+5. **Execute o projeto**:
+
+- Para rodar normalmente:
+```sh
+npm start
+```
+
+- Para rodar em ambiente de desenvolvimento (caso use nodemon):
+```sh
+npm run dev
+```
+
+6. **Verifique se o servidor está rodando**:
+O terminal deve exibir uma mensagem indicando que o servidor está ativo, geralmente com um link como `http://localhost:3000`.
+
+Se houver erros, verifique as dependências e a versão do Node.js (`node -v`) e do npm (`npm -v`).
