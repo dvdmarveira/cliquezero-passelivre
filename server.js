@@ -17,7 +17,6 @@ let estudantesDB = [
     serie: "6º ano",
     escola: "EM Professor João Santos",
     nis: "12345678901",
-    rendaPerCapita: 200,
     dataNascimento: "2011-03-15",
     responsavel: "Maria Silva",
     telefone: "81999999999",
@@ -28,7 +27,6 @@ let estudantesDB = [
     serie: "7º ano",
     escola: "EM Professor João Santos",
     nis: "12345678902",
-    rendaPerCapita: 300,
     dataNascimento: "2010-06-22",
     responsavel: "José Santos",
     telefone: "81988888888",
@@ -39,13 +37,11 @@ let estudantesDB = [
 const cadUnico = [
   {
     nis: "12345678901",
-    rendaPerCapita: 200,
     ativo: true,
     dataAtualizacao: "2024-01-15",
   },
   {
     nis: "12345678902",
-    rendaPerCapita: 300,
     ativo: true,
     dataAtualizacao: "2023-02-20",
   },
@@ -91,14 +87,14 @@ function verificarElegibilidade(estudante) {
     };
   }
 
-  // Verifica renda per capita
-  if (cadastroUnico.rendaPerCapita > 500) {
-    return {
-      elegivel: false,
-      motivo: "Renda per capita acima do limite permitido",
-      codigoMotivo: "RENDA_EXCEDIDA",
-    };
-  }
+  // // Verifica renda per capita
+  // if (cadastroUnico.rendaPerCapita > 500) {
+  //   return {
+  //     elegivel: false,
+  //     motivo: "Renda per capita acima do limite permitido",
+  //     codigoMotivo: "RENDA_EXCEDIDA",
+  //   };
+  // }
 
   // Verifica série escolar
   const seriesPermitidas = ["6º ano", "7º ano", "8º ano", "9º ano"];
@@ -113,7 +109,7 @@ function verificarElegibilidade(estudante) {
   return {
     elegivel: true,
     motivo:
-      "Estudante atende todos os critérios. <a href='https://wa.me/555581985461063?text=Seu%20vem%20foi%20emitido!'>Entrar em contato com o estudante</a>",
+      "Estudante atende todos os critérios. <a href='https://wa.me/5581985461063?text=Parab%C3%A9ns!%20Verificamos%20que%20a%20sua%20matr%C3%ADcula%20no%20Embarque%20Digital%20foi%20efetivada%20com%20sucesso.%20Uhuuul!%20%0A%0AAgora%20voc%C3%AA%20tem%20acesso%20ao%20benef%C3%ADcio%20do%20Passe%20Livre%20para%20utilizar%20o%20transporte%20p%C3%BAblico%20na%20Regi%C3%A3o%20Metropolitana%20do%20Recife.%0A%0AVoc%C3%AA%20possui%20interesse%20em%20ativar%20esse%20benef%C3%ADcio%3F%0A%0AResponda%20com%20%22Sim%22%20ou%20%22N%C3%A3o%22.'>Notificar o estudante via WhatsApp.</a>",
     codigoMotivo: "ELEGIVEL",
   };
 }

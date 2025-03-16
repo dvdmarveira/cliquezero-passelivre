@@ -23,6 +23,7 @@
           <div class="form-group">
             <label>Série</label>
             <select name="serie" required>
+              <option value="" disabled selected>Selecione uma série</option>
               <option value="6º ano">6º ano</option>
               <option value="7º ano">7º ano</option>
               <option value="8º ano">8º ano</option>
@@ -31,7 +32,15 @@
           </div>
           <div class="form-group">
             <label>Escola</label>
-            <input type="text" name="escola" required>
+            <select name="escola" required>
+              <option value="" disabled selected>Selecione uma instituição</option>
+              <option value="unicap">Universidade Católica de Pernambuco (UNICAP)</option>
+              <option value="ficr">Faculdade Católica Imaculada Conceição do Recife (FICR)</option>
+              <option value="senac">Faculdade SENAC (SENAC)</option>
+              <option value="unit">Centro Universitário Tiradentes (UNIT)</option>
+              <option value="cesar">Centro de Estudos e Sistemas Avançados do Recife (Cesar School)</option>
+              <option value="em">EM Professor João Santos</option>
+            </select>
           </div>
           <div class="form-group">
             <label>NIS</label>
@@ -50,10 +59,19 @@
             <input type="tel" name="telefone" required>
           </div>
         </div>
-        <button type="submit">Cadastrar</button>
+
+        <button type="submit">Matricular</button>
+        <br />
+
+
 
       </form>
+
     </div>
+    <button type="submit" id="listarEstudantesBtn" class="">Listar estudantes matriculados</button>
+    <div id="estudantes"></div>
+    <div id="totalEstudantes"></div>
+    <div id="resultadoEstudantes" class="hidden"></div>
 
     <div id="resultado" class="card hidden">
       <h2>Resultado da Verificação</h2>

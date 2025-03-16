@@ -45,17 +45,17 @@ document
               <p class="font-medium">Estudante: ${resultado.estudante.nome}</p>
                             <p style="color: green;">Aluno matriculado com sucesso!</p>
               <p class="${elegibilidadeClass} font-bold">
-                  Status VEM: ${
+                  Elegibilidade ao Passe Livre: ${
                     resultado.elegibilidade.elegivel
                       ? "ELEGÍVEL"
                       : "NÃO ELEGÍVEL"
                   }
               </p>
-              <p>Motivo: ${resultado.elegibilidade.motivo}</p>
+              <p>${resultado.elegibilidade.motivo}</p>
 
           </div>
       `;
-
+      e.target.reset();
       // Se o estudante for elegível, reseta o formulário
       if (resultado.elegibilidade.elegivel) {
         e.target.reset();
@@ -69,7 +69,23 @@ document
 // Evento para listar todos os estudantes cadastrados
 document
   .getElementById("listarEstudantesBtn")
-  .addEventListener("click", listarEstudantes);
+  .addEventListener("click", toggleListaEstudantes);
+
+async function toggleListaEstudantes() {
+  const resultadoEstudantesDiv = document.getElementById("resultadoEstudantes");
+
+  // Se a lista não está visível, faz a requisição e exibe os estudantes
+  if (resultadoEstudantesDiv.classList.contains("hidden")) {
+    await listarEstudantes(); // Carrega os estudantes
+    resultadoEstudantesDiv.classList.remove("hidden"); // Exibe a lista de estudantes
+    estudantes.classList.remove("hidden"); // Exibe o total de estudantes
+    totalEstudantes.classList.remove("hidden"); // Exibe o total de estudantes
+  } else {
+    resultadoEstudantesDiv.classList.add("hidden"); // Esconde a lista de estudantes
+    estudantes.classList.add("hidden"); // Exibe o total de estudantes
+    totalEstudantes.classList.add("hidden"); // Esconde o total de estudantes
+  }
+}
 
 async function listarEstudantes() {
   try {
@@ -101,13 +117,12 @@ async function listarEstudantes() {
     // Exibe os estudantes na tela
     dados.estudantes.forEach((estudante) => {
       const estudanteItem = document.createElement("div");
-      estudanteItem.classList.add("estudante-item");
+      estudanteItem.classList.toggle("estudante-item");
       estudanteItem.innerHTML = `
         <p><strong>Nome:</strong> ${estudante.nome}</p>
         <p><strong>Série:</strong> ${estudante.serie}</p>
         <p><strong>Escola:</strong> ${estudante.escola}</p>
         <p><strong>NIS:</strong> ${estudante.nis}</p>
-        <p><strong>Renda Per Capita:</strong> ${estudante.rendaPerCapita}</p>
         <p><strong>Responsável:</strong> ${estudante.responsavel}</p>
         <p><strong>Telefone:</strong> ${estudante.telefone}</p>
         <hr />
@@ -119,7 +134,7 @@ async function listarEstudantes() {
     const resultadoEstudantesDiv = document.getElementById(
       "resultadoEstudantes"
     );
-    resultadoEstudantesDiv.classList.remove("hidden");
+    resultadoEstudantesDiv.classList.toggle("hidden");
   } catch (error) {
     // Exibe um erro caso não consiga listar os estudantes
     console.error("Erro ao listar estudantes:", error);
