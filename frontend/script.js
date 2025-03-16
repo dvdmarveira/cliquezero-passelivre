@@ -23,6 +23,7 @@ document
 
       // Processa a resposta do servidor
       const resultado = await response.json();
+      console.log(resultado);
 
       // Exibe os resultados na tela
       const resultadoDiv = document.getElementById("resultado");

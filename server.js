@@ -1,5 +1,5 @@
 const express = require("express");
-const mysql = require("mysql2/promise");
+// const mysql = require("mysql2/promise");
 const cors = require("cors");
 require("dotenv").config();
 
@@ -9,43 +9,49 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 app.use(express.json());
 
-// Base de dados simulada de estudantes
-let estudantesDB = [
-  {
-    id: 1,
-    nome: "João Silva",
-    serie: "6º ano",
-    escola: "EM Professor João Santos",
-    nis: "12345678901",
-    dataNascimento: "2011-03-15",
-    responsavel: "Maria Silva",
-    telefone: "81999999999",
-  },
-  {
-    id: 2,
-    nome: "Maria Santos",
-    serie: "7º ano",
-    escola: "EM Professor João Santos",
-    nis: "12345678902",
-    dataNascimento: "2010-06-22",
-    responsavel: "José Santos",
-    telefone: "81988888888",
-  },
-];
+const { Database } = require("./src/database");
 
-// Base de dados simulada do CadÚnico
-const cadUnico = [
-  {
-    nis: "12345678901",
-    ativo: true,
-    dataAtualizacao: "2024-01-15",
-  },
-  {
-    nis: "12345678902",
-    ativo: true,
-    dataAtualizacao: "2023-02-20",
-  },
-];
+const db = new Database();
+
+// // Base de dados simulada de estudantes
+// let estudantesDB = [
+//   {
+//     id: 1,
+//     nome: "João Silva",
+//     serie: "6º ano",
+//     escola: "EM Professor João Santos",
+//     nis: "12345678901",
+//     dataNascimento: "2011-03-15",
+//     responsavel: "Maria Silva",
+//     telefone: "81999999999",
+//   },
+//   {
+//     id: 2,
+//     nome: "Maria Santos",
+//     serie: "7º ano",
+//     escola: "EM Professor João Santos",
+//     nis: "12345678902",
+//     dataNascimento: "2010-06-22",
+//     responsavel: "José Santos",
+//     telefone: "81988888888",
+//   },
+// ];
+
+// // Base de dados simulada do CadÚnico
+// const cadUnico = [
+//   {
+//     nis: "12345678901",
+//     ativo: true,
+//     dataAtualizacao: "2024-01-15",
+//   },
+//   {
+//     nis: "12345678902",
+//     ativo: true,
+//     dataAtualizacao: "2023-02-20",
+//   },
+// ];
+
+const cadUnico = db.select("cadUnico");
 
 /**
  * Verifica a elegibilidade do estudante para o Passe Livre
@@ -54,7 +60,9 @@ const cadUnico = [
  */
 function verificarElegibilidade(estudante) {
   // Busca dados do CadÚnico
-  const cadastroUnico = cadUnico.find((c) => c.nis === estudante.nis);
+  const cadastroUnico = db
+    .select("cadUnico")
+    .find((c) => c.nis === estudante.nis);
 
   // Verifica existência no CadÚnico
   if (!cadastroUnico) {
@@ -117,12 +125,13 @@ function verificarElegibilidade(estudante) {
 // Rota para cadastrar novo estudante
 app.post("/cadastrar-estudante", (req, res) => {
   try {
+    const estudantes = db.select("estudantes");
     const novoEstudante = {
-      id: estudantesDB.length + 1,
+      id: estudantes.length + 1,
       ...req.body,
     };
 
-    estudantesDB.push(novoEstudante);
+    db.insert("estudantes", novoEstudante);
 
     const resultado = verificarElegibilidade(novoEstudante);
 
@@ -142,9 +151,10 @@ app.post("/cadastrar-estudante", (req, res) => {
 // Rota para listar todos os estudantes
 app.get("/estudantes", (req, res) => {
   try {
+    const estudantes = db.select("estudantes");
     res.json({
-      estudantes: estudantesDB,
-      total: estudantesDB.length,
+      estudantes,
+      total: estudantes.length,
     });
   } catch (error) {
     res.status(500).json({
@@ -172,7 +182,7 @@ app.get("/cadunico", (req, res) => {
 // Rota para processar automaticamente as solicitações
 app.get("/processar-solicitacoes", async (req, res) => {
   try {
-    const resultados = estudantesDB.map((estudante) => {
+    const resultados = db.select("estudantes").map((estudante) => {
       const resultado = verificarElegibilidade(estudante);
       return {
         estudante: {
@@ -209,7 +219,7 @@ app.get("/processar-solicitacoes", async (req, res) => {
 // Rota para verificar o status de um estudante específico
 app.get("/verificar-estudante/:nis", (req, res) => {
   const { nis } = req.params;
-  const estudante = estudantesDB.find((e) => e.nis === nis);
+  const estudante = db.select("estudantes").find((e) => e.nis === nis);
 
   if (!estudante) {
     return res.status(404).json({
